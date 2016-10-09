@@ -1,0 +1,28 @@
+{
+  "name": "react-grunt-theme",
+  "version": "1.0.0",
+  "description": "A React Grunt Babel Theme for Start Projects",
+  "main": "gruntfile.babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsoldera/react-grunt-theme.git"
+  },
+  "keywords": [
+    "babel",
+    "grunt",
+    "react",
+    "es2015"
+  ],
+  "author": "Danielle Soldera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsoldera/react-grunt-theme/issues"
+  },
+  "homepage": "https://github.com/dsoldera/react-grunt-theme#readme",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  }
+}
