@@ -3,12 +3,51 @@
 module.exports = function (grunt) {
 
 	require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
+
+  var defaults = {
+    app: '.',
+    src: 'src',
+    dist: 'dist'
+  };
 
 	grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
+    /*
+    ** Webpack Settings
+    */
+    webpack: {
+        options: {
+            // configuration for all builds
+        },
+        build: {
+            // configuration for this build
+        }
+    },
+
+    /*
+    **  Browserify Settings
+    */
+    browserify: {
+      dev: {
+        files: {
+          'dist/app.js': ['src/app.js']
+        },
+        options: {
+          transform: [["reactify", {"es6": true}]]
+          //transform: [['babelify', {presets: ['es2015', 'react']}]]
+        },
+      }
+    },
+
+    /*
+    ** Trying compile the JSX to JS + ES6 with Grunt-babel
+    */
     babel: {
       options: {
         sourceMap: true,
-        plugins: ['transform-react-jsx'],
+        //plugins: ['transform-react-jsx']
         presets: ['babel-preset-es2015', 'babel-preset-react']
       },
       dist: {
@@ -23,6 +62,10 @@ module.exports = function (grunt) {
     }
 	});
 
-	grunt.registerTask('default', ['babel']);
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-webpack');
+  grunt.loadNpmTasks('grunt-webpack-server');
+
+	//grunt.registerTask('default', ['browserify']);
 };
 
