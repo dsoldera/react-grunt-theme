@@ -1,5 +1,7 @@
 'use strict';
 
+var webpackDevConfig = require('./webpack.config.js');
+
 module.exports = function (grunt) {
 
 	require('load-grunt-tasks')(grunt);
@@ -18,12 +20,7 @@ module.exports = function (grunt) {
     ** Webpack Settings
     */
     webpack: {
-        options: {
-            // configuration for all builds
-        },
-        build: {
-            // configuration for this build
-        }
+      options: webpackDevConfig
     },
 
     /*
@@ -39,7 +36,7 @@ module.exports = function (grunt) {
           //transform: [['babelify', {presets: ['es2015', 'react']}]]
         },
       }
-    },
+    },  
 
     /*
     ** Trying compile the JSX to JS + ES6 with Grunt-babel
