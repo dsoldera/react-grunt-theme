@@ -30583,30 +30583,30 @@ var ReactDOM = require('react-dom');
 var HomePage = require('./components/HomePage');
 var AboutPage = require('./components/AboutPage');
 
-var App = React.createClass({displayName: "App",
-	render: function() {
-		var Child;
+// var App = React.createClass({
+// 	render: function() {
+// 		var Child;
 
-		switch(this.props.route){
-			case 'about': Child = AboutPage; break;
-			default: Child = HomePage;
-		}
+// 		switch(this.props.route){
+// 			case 'about': Child = AboutPage; break;
+// 			default: Child = HomePage;
+// 		}
 
-		return (
-			React.createElement("div", null, 
-				React.createElement(Child, null)
-			)
-		);
-	}
-});
+// 		return (
+// 			<div>
+// 				<Child />
+// 			</div>
+// 		);
+// 	}
+// });
 
-function render() {
-	var route = window.location.hash.substr(1);
-	ReactDOM.render(React.createElement(App, {router: route}), document.getElementById('container'));
-}
+// function render() {
+// 	var route = window.location.hash.substr(1);
+// 	ReactDOM.render(<App router={route} />, document.getElementById('container'));
+// }
 
-window.addEventListener('hashchange', render);
-render();
+// window.addEventListener('hashchange', render);
+// render();
 ReactDOM.render(React.createElement(HomePage, null), document.getElementById('container'))
 },{"./components/AboutPage":174,"./components/HomePage":175,"jquery":26,"react":172,"react-dom":29}],174:[function(require,module,exports){
 "use strict";

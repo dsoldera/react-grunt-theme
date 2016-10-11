@@ -9,28 +9,28 @@ var ReactDOM = require('react-dom');
 var HomePage = require('./components/HomePage');
 var AboutPage = require('./components/AboutPage');
 
-var App = React.createClass({
-	render: function() {
-		var Child;
+// var App = React.createClass({
+// 	render: function() {
+// 		var Child;
 
-		switch(this.props.route){
-			case 'about': Child = AboutPage; break;
-			default: Child = HomePage;
-		}
+// 		switch(this.props.route){
+// 			case 'about': Child = AboutPage; break;
+// 			default: Child = HomePage;
+// 		}
 
-		return (
-			<div>
-				<Child />
-			</div>
-		);
-	}
-});
+// 		return (
+// 			<div>
+// 				<Child />
+// 			</div>
+// 		);
+// 	}
+// });
 
-function render() {
-	var route = window.location.hash.substr(1);
-	ReactDOM.render(<App router={route} />, document.getElementById('container'));
-}
+// function render() {
+// 	var route = window.location.hash.substr(1);
+// 	ReactDOM.render(<App router={route} />, document.getElementById('container'));
+// }
 
-window.addEventListener('hashchange', render);
-render();
+// window.addEventListener('hashchange', render);
+// render();
 ReactDOM.render(<HomePage />, document.getElementById('container'))
