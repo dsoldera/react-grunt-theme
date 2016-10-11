@@ -1,16 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
- 
+
 module.exports = {
   cache: true,
   target: 'node',
   entry: {
     react: './app'
   },
-  output: { 
+  output: {
     path: path.join(__dirname, "dist"),
-    publicPath: "dist/",
-    filename: 'app.js' 
+    filename: 'app.js'
   },
   module: {
     loaders: [

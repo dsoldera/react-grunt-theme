@@ -16,12 +16,14 @@ module.exports = function (grunt) {
 	grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+
     /*
     ** Webpack Settings
     */
     webpack: {
       options: webpackDevConfig
     },
+
 
     /*
     **  Browserify Settings
@@ -32,11 +34,12 @@ module.exports = function (grunt) {
           'dist/app.js': ['src/app.js']
         },
         options: {
-          transform: [["reactify", {"es6": true}]]
+          transform: ["reactify"]
+          //transform: [["reactify", {"es6": true}]]
           //transform: [['babelify', {presets: ['es2015', 'react']}]]
         },
       }
-    },  
+    },
 
     /*
     ** Trying compile the JSX to JS + ES6 with Grunt-babel
@@ -56,13 +59,51 @@ module.exports = function (grunt) {
           ext: '.js'
         }]
       }
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 7002,
+          open: true,
+          hostname: '*',
+          base: './',
+          livereload: 35728
+        },
+        livereload: {
+          options: {
+            open: {
+              appName: 'Chrome'
+            }
+          }
+        }
+      }
+    },
+
+    watch: {
+      options: {
+        livereload: {
+          host: 'localhost',
+          port: 7000,
+        },
+        dateFormat: function(time) {
+          grunt.log.writeln('The watch finished in ' + time + 'ms at ' + (new Date()).toString());
+          grunt.log.writeln('Waiting for more changes...');
+        },
+      },
+      scripts: {
+        files: 'src/**/*.{js,jsx}',
+        tasks: ['browserify:dev']
+      }
     }
 	});
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-webpack');
-  grunt.loadNpmTasks('grunt-webpack-server');
+  //grunt.loadNpmTasks('grunt-webpack');
+  //grunt.loadNpmTasks('grunt-webpack-server');
 
-	//grunt.registerTask('default', ['browserify']);
+	grunt.registerTask('default', ['connect:server', 'watch:scripts']);
 };
 
