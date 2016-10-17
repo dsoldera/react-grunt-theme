@@ -1,23 +1,21 @@
 # React Grunt Babel Theme
 
-Starter code for transpiling ES2015 (including modules) with Babel, GRUNT and Browserify.
-
+Starter code for transpiling React ES2015 (including modules) with Babel, GRUNT and Browserify.
 
 # Installing
 
 1. Clone the repo
 2. `npm install -g grunt` to install Grunt globally.
-3. `npm install -g webpack` to install Webpack globally
 4. `npm install -g browserify` to install Browserify globally
 5. `npm install` to resolve project dependencies.
 
+### Browserify
+How I'm using Grunt and Browserify. For it I've installed the plugin `grunt-browserify`.
 
-### Browserify or Webpack ???
-For now I'm testing both, for start I will be installing both of them.
-How i´m using Grunt, I installed the `grunt-browserify` and `grunt-webpack`
+Implementation based on this [article](http://chris.house/blog/grunt-configuration-for-react-browserify-babelify/)
 
 # REACT Definitions
-1. Using ES5
+1. Using React with ES6
 
 ## Props and States!!
 Props - Look like HTML attributes, but immutable

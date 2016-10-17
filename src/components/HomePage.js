@@ -1,17 +1,14 @@
-"use strict";
+import React from 'react';
 
-//using CommonJS Pattern
-var React = require('react');
+class HomePage extends React.Component {
+  render() {
+    return (
+      <div className="jumbotron">
+        <h1>Grunt React Theme!!!</h1>
+        <p>This theme is using compile React with Grunt and Browserify</p>
+      </div>
+    );
+  }
+}
 
-var HomePage = React.createClass({
-	render: function() {
-		return (
-			<div className="content-home">
-				<h1>Home Page</h1>
-				<p>This is a Home Page Content</p>
-			</div>
-		);
-	}
-});
-
-module.exports = HomePage;
+export default HomePage;
