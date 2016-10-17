@@ -14,7 +14,8 @@
     "babel",
     "grunt",
     "react",
-    "es2015"
+    "es2015",
+    "browserify"
   ],
   "author": "Danielle Soldera",
   "license": "ISC",
@@ -29,8 +30,6 @@
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-webpack": "^1.0.18",
-    "grunt-webpack-server": "^0.1.0",
     "load-grunt-tasks": "^3.5.2",
     "react": "15.0.2",
     "react-dom": "15.0.2",
