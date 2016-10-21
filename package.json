@@ -29,7 +29,9 @@
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
     "load-grunt-tasks": "^3.5.2",
+    "jit-grunt": "^0.10.0",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
@@ -41,6 +43,7 @@
   "devDependencies": {
     "babel-cli": "6.8.0",
     "babel-core": "6.8.0",
+    "babel-eslint": "^7.0.0",
     "babel-loader": "6.2.4",
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-plugin-react-display-name": "2.0.0",
@@ -49,6 +52,10 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-2": "^6.17.0",
-    "babel-register": "6.8.0"
-  }
+    "babel-register": "6.8.0",
+    "eslint": "2.9.0",
+    "eslint-plugin-import": "1.6.1",
+    "eslint-plugin-react": "5.0.1",
+    "eslint-watch": "2.1.11"
+  },
 }

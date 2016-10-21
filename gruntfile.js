@@ -43,6 +43,13 @@ module.exports = function (grunt) {
       }
     },
 
+    /*
+    ** Checking React Code
+    */
+    eslint: {
+      target: ['<%= defaults.scripts %>react/**/*.js']
+    },
+
     watch: {
       options: {
         livereload: {
@@ -56,7 +63,7 @@ module.exports = function (grunt) {
       },
       scripts: {
         files: ['src/**/*.js'],
-        tasks: ['browserify']
+        tasks: ['eslint', 'browserify']
       }
     }
 	});

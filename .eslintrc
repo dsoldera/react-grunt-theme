@@ -1,13 +1,9 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
+  "parser": "babel-eslint",
   "plugins": [
     "react"
   ],
-  "parserOptions": {
+    "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
@@ -18,10 +14,10 @@
     "es6": true,
     "browser": true,
     "node": true,
-    "jquery": true,
-    "mocha": true
+    "jquery": true
   },
   "rules": {
+    "strict": 0,
     "quotes": 0,
     "no-console": 1,
     "no-debugger": 1,
@@ -29,7 +25,7 @@
     "semi": [1, "always"],
     "no-trailing-spaces": 0,
     "eol-last": 0,
-    "no-unused-vars": 0,
+    "no-unused-vars": [2, {vars: local}],
     "no-underscore-dangle": 0,
     "no-alert": 0,
     "no-lone-blocks": 0,
@@ -45,12 +41,12 @@
     "react/jsx-no-bind": 1,
     "react/jsx-no-duplicate-props": 1,
     "react/jsx-no-literals": 0,
-    "react/jsx-no-undef": 1,
+    "react/jsx-no-undef": 2,
     "react/jsx-pascal-case": 1,
     "react/jsx-sort-prop-types": 0,
     "react/jsx-sort-props": 0,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
     "react/no-danger": 1,
     "react/no-did-mount-set-state": 1,
     "react/no-did-update-set-state": 1,
@@ -64,6 +60,7 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1,
+    "prefer-const": 2
   }
 }
